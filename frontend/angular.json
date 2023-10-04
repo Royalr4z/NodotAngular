@@ -25,9 +25,20 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "public/css/Fonts.min.css",
+              "public/lib/owlcarousel/assets/owl.carousel.min.css",
+              "public/lib/animate/animate.min.css",
+              "public/css/style.min.css"
             ],
-            "scripts": []
+            "scripts": [
+              "public/js/jquery-3.4.1.min.js",
+              "public/lib/wow/wow.min.js",
+              "public/lib/easing/easing.min.js",
+              "public/lib/waypoints/waypoints.min.js",
+              "public/lib/counterup/counterup.min.js",
+              "public/lib/owlcarousel/owl.carousel.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -94,5 +105,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "8ce3ff26-8389-4302-8418-b05adfff67f1"
   }
 }
