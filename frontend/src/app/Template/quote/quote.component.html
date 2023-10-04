@@ -1,0 +1,76 @@
+<div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s" id="quote">
+    <div class="container py-5">
+        <div class="row g-5">
+            <div class="col-lg-7">
+                <div class="section-title position-relative pb-3 mb-5">
+                    <h5 class="fw-bold text-primary text-uppercase">Solicite um orçamento</h5>
+                    <h1 class="mb-0">Precisa de um orçamento gratuito? Sinta-se à vontade para entrar em contato conosco</h1>
+                </div>
+                <div class="row gx-3">
+                    <div class="col-sm-6 wow zoomIn" data-wow-delay="0.2s">
+                        <h5 class="mb-4"><i class="fa fa-reply text-primary me-3"></i>Resposta dentro de 24 horas</h5>
+                    </div>
+                    <div class="col-sm-6 wow zoomIn" data-wow-delay="0.4s">
+                        <h5 class="mb-4"><i class="fa fa-phone-alt text-primary me-3"></i>suporte telefônico 24h</h5>
+                    </div>
+                </div>
+                <p class="mb-4" [style.text-align]="'justify'">Faça um orçamento conosco e descubra por que somos a escolha certa para suas necessidades: oferecemos produtos e serviços de alta qualidade, equipe altamente capacitada e dedicada, preços competitivos e suporte inigualável. Não perca a oportunidade de ter o melhor para o seu negócio.</p>
+                <div class="d-flex align-items-center mt-2 wow zoomIn" data-wow-delay="0.6s">
+                    <div class="bg-primary d-flex align-items-center justify-content-center rounded" [style.width]="'60px'" [style.height]="'60px'">
+                        <i class="fa fa-phone-alt text-white"></i>
+                    </div>
+                    <div class="ps-4">
+                        <h5 class="mb-2">Ligue para tirar qualquer dúvida</h5>
+                        <h4 class="text-primary mb-0">(61) 9 8303-5827</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-5">
+                <div class="bg-primary rounded h-100 d-flex align-items-center p-5 wow zoomIn" data-wow-delay="0.9s">
+                    <form>
+
+                        <!-- Success Start -->
+                        <div [ngClass]="boxSuccess ? 'd-none' : 'd-flex justify-content-center py-1 my-2 bg-success text-light'"
+                             [style.border-radius]="'5px'">
+                            <i class="bi bi-check"></i>
+                            <div>Mensagem enviada com sucesso!</div>
+                        </div>
+                        <!-- Success End -->
+
+                        <!-- Error Start -->
+                        <div [ngClass]="boxError ? 'd-none' : 'd-flex justify-content-center text-danger py-1 my-2 bg-danger text-light'"
+                             [style.border-radius]="'5px'">
+                            <i class="bi bi-exclamation-triangle px-1"></i>
+                            <div>{{ msgError.msg }}</div>
+                        </div>
+                        <!-- Error End -->
+
+                        <div class="row g-3">
+                            <div class="col-xl-12">
+                                <input id="typeName" type="text" class="form-control bg-light border-0" placeholder="Seu Nome" [style.height]="'55px'"/>
+                            </div>
+                            <div class="col-12">
+                                <input id="typeEmail" type="email" class="form-control bg-light border-0" placeholder="Seu E-mail" [style.height]="'55px'"/>
+                            </div>
+                            <div class="col-12">
+                                <select id="typeService" class="form-select bg-light border-0" [style.height]="'55px'">
+                                    <option defaultValue value="">Selecione um serviço</option>
+                                    <option value="Pentest">Pentest</option>
+                                    <option value="Automação de Tarefas">Automação de Tarefas</option>
+                                    <option value="Desenvolvimento web">Desenvolvimento web</option>
+                                    <option value="Infraestrutura">Infraestrutura</option>
+                                </select>
+                            </div>
+                            <div class="col-12">
+                                <textarea id="typeMessage" class="form-control bg-light border-0" rows="3" placeholder="Mensagem"></textarea>
+                            </div>
+                            <div class="col-12">
+                                <button (click)="registerData()" class="btn btn-dark w-100 py-3" type="button">Solicite um orçamento</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
