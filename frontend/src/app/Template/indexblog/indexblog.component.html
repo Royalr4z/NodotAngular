@@ -9,7 +9,7 @@
                 <div *ngFor="let blog of blogs; let index = index" class="col-lg-4 wow slideInUp">
                     <div class="blog-item bg-light rounded overflow-hidden">
                         <div class="blog-img position-relative overflow-hidden">
-                            <img class="img-fluid border-1 border-top border-start border-end border-gray" [src]="blog.imageUrl || 'img/blog-2.jpg'" alt="" style="height: 25vh; width: 100vh;" />
+                            <img class="img-fluid border-1 border-top border-start border-end border-gray" [src]="blog.imageUrl || '../../../assets/img/blog-2.jpg'" alt="" style="height: 25vh; width: 100vh;" />
                             <a class="position-absolute top-0 start-0 bg-primary text-white rounded-end mt-5 py-2 px-4" [href]="'blog?category=' + blog.categoryName">
                                 {{ blog.categoryName }}
                             </a>

@@ -6,5 +6,5 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./service-tpt.component.css']
 })
 export class ServiceTptComponent {
-  @Input() theme: string = 'light'; 
+  @Input() theme: string = 'light';
 }

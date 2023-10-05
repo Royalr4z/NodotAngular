@@ -78,7 +78,7 @@ spec:
         - name: frontend-volume
           mountPath: /frontend
       ports:
-        - containerPort: 3000
+        - containerPort: 4200
       command: ["bash", "-c", "cd /frontend && npm i && npm start"]
   volumes:
     - name: frontend-volume
@@ -96,5 +96,5 @@ spec:
   ports:
     - protocol: TCP
       port: 80
-      targetPort: 3000
+      targetPort: 4200
 ---

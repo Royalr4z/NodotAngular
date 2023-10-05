@@ -14,6 +14,7 @@ import { ServiceTptComponent } from './Template/service-tpt/service-tpt.componen
 import { QuoteComponent } from './Template/quote/quote.component';
 import { IndexblogComponent } from './Template/indexblog/indexblog.component';
 import { ErrorComponent } from './Template/error/error.component';
+import { HeaderComponent } from './Template/header/header.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { ErrorComponent } from './Template/error/error.component';
     QuoteComponent,
     IndexblogComponent,
     ErrorComponent,
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,

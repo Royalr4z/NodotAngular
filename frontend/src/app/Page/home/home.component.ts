@@ -15,7 +15,7 @@ export class HomeComponent implements OnInit {
     this.titleService.setTitle('NODOT');
 
     // Define as meta tags
-    this.metaService.addTag({ name: 'description', content: 'Descrição da página' });
-    this.metaService.addTag({ name: 'keywords', content: 'automação, NODOT' });
+    this.metaService.addTag({ name: 'description', content: 'Página Inicial' });
+    this.metaService.addTag({ name: 'keywords', content: 'Index, NODOT' });
   }
 }
