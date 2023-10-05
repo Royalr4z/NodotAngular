@@ -18,6 +18,7 @@ import { HeaderComponent } from './Template/header/header.component';
 import { AutoTaskComponent } from './Page/auto-task/auto-task.component';
 import { InfrastructureComponent } from './Page/infrastructure/infrastructure.component';
 import { PentestComponent } from './Page/pentest/pentest.component';
+import { WebDevelopmentComponent } from './Page/web-development/web-development.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { PentestComponent } from './Page/pentest/pentest.component';
     AutoTaskComponent,
     InfrastructureComponent,
     PentestComponent,
+    WebDevelopmentComponent,
   ],
   imports: [
     BrowserModule,

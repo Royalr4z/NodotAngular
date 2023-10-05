@@ -6,8 +6,10 @@ import { ServiceComponent } from './Page/service/service.component';
 import { AutoTaskComponent } from './Page/auto-task/auto-task.component';
 import { InfrastructureComponent } from './Page/infrastructure/infrastructure.component';
 import { PentestComponent } from './Page/pentest/pentest.component';
+import { WebDevelopmentComponent } from './Page/web-development/web-development.component';
 
 const routes: Routes = [
+  { path: 'web-development', component:  WebDevelopmentComponent },
   { path: 'pentest', component:  PentestComponent },
   { path: 'infrastructure', component:  InfrastructureComponent },
   { path: 'auto-task', component:  AutoTaskComponent },
