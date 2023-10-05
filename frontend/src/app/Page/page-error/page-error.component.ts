@@ -18,7 +18,7 @@ export class PageErrorComponent implements OnInit {
     this.titleService.setTitle(`Error ${status} | NODOT`);
 
     // Define as meta tags
-    this.metaService.addTag({ name: 'description', content: 'Página em que Descreve o Serviço de Pentest' });
+    this.metaService.addTag({ name: 'description', content: 'Página de Error' });
     this.metaService.addTag({ name: 'keywords', content: `Error ${status}, NODOT` });
   }
 }

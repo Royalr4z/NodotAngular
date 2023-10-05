@@ -20,6 +20,8 @@ import { InfrastructureComponent } from './Page/infrastructure/infrastructure.co
 import { PentestComponent } from './Page/pentest/pentest.component';
 import { WebDevelopmentComponent } from './Page/web-development/web-development.component';
 import { PageErrorComponent } from './Page/page-error/page-error.component';
+import { ContactUsComponent } from './Template/contact-us/contact-us.component';
+import { PageContactComponent } from './Page/page-contact/page-contact.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +42,8 @@ import { PageErrorComponent } from './Page/page-error/page-error.component';
     PentestComponent,
     WebDevelopmentComponent,
     PageErrorComponent,
+    ContactUsComponent,
+    PageContactComponent,
   ],
   imports: [
     BrowserModule,
