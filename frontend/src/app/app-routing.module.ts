@@ -3,8 +3,10 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { HomeComponent } from './Page/home/home.component';
 import { ServiceComponent } from './Page/service/service.component';
+import { AutoTaskComponent } from './Page/auto-task/auto-task.component';
 
 const routes: Routes = [
+  { path: 'auto-task', component:  AutoTaskComponent },
   { path: 'service', component:  ServiceComponent },
   { path: '', component:  HomeComponent }
   // { path: '', redirectTo: '/service', pathMatch: 'full' },

@@ -15,6 +15,7 @@ import { QuoteComponent } from './Template/quote/quote.component';
 import { IndexblogComponent } from './Template/indexblog/indexblog.component';
 import { ErrorComponent } from './Template/error/error.component';
 import { HeaderComponent } from './Template/header/header.component';
+import { AutoTaskComponent } from './Page/auto-task/auto-task.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { HeaderComponent } from './Template/header/header.component';
     IndexblogComponent,
     ErrorComponent,
     HeaderComponent,
+    AutoTaskComponent,
   ],
   imports: [
     BrowserModule,
