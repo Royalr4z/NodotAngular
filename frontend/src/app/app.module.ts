@@ -16,6 +16,7 @@ import { IndexblogComponent } from './Template/indexblog/indexblog.component';
 import { ErrorComponent } from './Template/error/error.component';
 import { HeaderComponent } from './Template/header/header.component';
 import { AutoTaskComponent } from './Page/auto-task/auto-task.component';
+import { InfrastructureComponent } from './Page/infrastructure/infrastructure.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { AutoTaskComponent } from './Page/auto-task/auto-task.component';
     ErrorComponent,
     HeaderComponent,
     AutoTaskComponent,
+    InfrastructureComponent,
   ],
   imports: [
     BrowserModule,
