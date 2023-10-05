@@ -19,6 +19,7 @@ import { AutoTaskComponent } from './Page/auto-task/auto-task.component';
 import { InfrastructureComponent } from './Page/infrastructure/infrastructure.component';
 import { PentestComponent } from './Page/pentest/pentest.component';
 import { WebDevelopmentComponent } from './Page/web-development/web-development.component';
+import { PageErrorComponent } from './Page/page-error/page-error.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { WebDevelopmentComponent } from './Page/web-development/web-development.
     InfrastructureComponent,
     PentestComponent,
     WebDevelopmentComponent,
+    PageErrorComponent,
   ],
   imports: [
     BrowserModule,
