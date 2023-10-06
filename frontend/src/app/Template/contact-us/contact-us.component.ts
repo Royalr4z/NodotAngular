@@ -9,17 +9,17 @@ import { BaseUrl } from '../../../BaseUrl'
 })
 export class ContactUsComponent {
   msgError: any = {};
-  boxSuccess = true;
-  boxError = true;
+  boxSuccess: boolean = true;
+  boxError: boolean = true;
 
   constructor(private http: HttpClient) {}
 
   Send(): void {
     const dados = {
-      name: (document.querySelector('#typeUser') as HTMLInputElement).value,
-      email: (document.querySelector('#typeEmail') as HTMLInputElement).value,
-      subject: (document.querySelector('#typeSubject') as HTMLInputElement).value,
-      content: (document.querySelector('#typeContent') as HTMLInputElement).value
+      name: (<HTMLInputElement>document.querySelector('#typeUser')).value,
+      email: (<HTMLInputElement>document.querySelector('#typeEmail')).value,
+      subject: (<HTMLInputElement>document.querySelector('#typeSubject')).value,
+      content: (<HTMLInputElement>document.querySelector('#typeContent')).value
     };
 
     const options = {
@@ -28,18 +28,18 @@ export class ContactUsComponent {
       })
     };
 
-    this.http.post(`${BaseUrl}/api/message`, dados, options).subscribe(
+    this.http.post(`${BaseUrl}/message`, dados, options).subscribe(
       () => {
         this.boxError = true;
         this.boxSuccess = false;
 
-        (document.querySelector('#typeUser') as HTMLInputElement).value = '';
-        (document.querySelector('#typeEmail') as HTMLInputElement).value = '';
-        (document.querySelector('#typeSubject') as HTMLInputElement).value = '';
-        (document.querySelector('#typeContent') as HTMLInputElement).value = '';
+        (<HTMLInputElement>document.querySelector('#typeUser')).value = '';
+        (<HTMLInputElement>document.querySelector('#typeEmail')).value = '';
+        (<HTMLInputElement>document.querySelector('#typeSubject')).value = '';
+        (<HTMLInputElement>document.querySelector('#typeContent')).value = '';
 
         setTimeout(() => {
-          window.location.href = './contact';
+          window.location.href = '/contact';
         }, 2000);
       },
       (error) => {

@@ -4,6 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+
 import { ServiceComponent } from './Page/service/service.component';
 import { HomeComponent } from './Page/home/home.component';
 import { IndexheaderComponent } from './Template/indexheader/indexheader.component'

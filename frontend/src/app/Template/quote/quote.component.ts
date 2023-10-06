@@ -39,7 +39,7 @@ export class QuoteComponent {
     this.http.post<any>(`${BaseUrl}/FreeQuote`, dados, options)
       .subscribe(
         (response) => {
-          if (response.status === 204) {
+          if (response === null || response.status === 204) {
             this.boxError = true;
             this.boxSuccess = false;
 
