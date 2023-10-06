@@ -18,7 +18,11 @@ export class IndexblogComponent {
       .subscribe(
         (response: any) => {
           this.blogs = response.blog;
-          this.loading = true;
+          if (this.blogs.length === 0){
+            this.loading = false;
+          } else {
+            this.loading = true;
+          }
         },
         (error) => {
           this.loading = false;
