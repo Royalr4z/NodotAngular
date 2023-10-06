@@ -1,0 +1,66 @@
+<nav aria-label="..." class="mx-4 mb-5">
+    <ul class="pagination pagination-md">
+        <li class="page-item active" aria-current="page">
+            <a class="page-link" href="/blog-creation">Blogs</a>
+        </li>
+        <li class="page-item">
+            <a class="page-link bg-dark" href="/users-table">Usuários</a>
+        </li>
+        <li class="page-item">
+            <a class="page-link bg-dark" href="/category-creation">Categorias</a>
+        </li>
+    </ul>
+</nav>
+
+<form class="m-4">
+    <div class="mb-3">
+        <label class="col-form-label text-dark">Título:</label>
+        <input type="text" class="form-control border border-2 border-dark" id="typeTitle"/>
+    </div>
+    <div class="mb-3">
+        <label class="col-form-label text-dark">Descrição:</label>
+        <input type="text" class="form-control border border-2 border-dark" id="typeSubtitle"/>
+    </div>
+    <div class="mb-3">
+        <label class="col-form-label text-dark">Imagem (URL): <span [style.color]="'#8b8b8b'">(Opcional)</span></label>
+        <input type="text" class="form-control border border-2 border-dark" id="typeImageUrl"/>
+    </div>
+    <div class="mb-3">
+        <label class="col-form-label text-dark">Conteúdo: <span class="text-primary">(Coloque as tags no texto)</span></label>
+        <textarea class="form-control border border-2 border-dark" id="typeContent"></textarea>
+    </div>
+    <div class="col-12">
+        <span class="text-dark">Usuário:</span>
+        <select id="typeUser" class="form-select mb-3 mt-2 border border-2 border-dark" [style.height]="'55px'">
+            <option [value]="" selected>Selecione o Usuário</option>
+            <option *ngFor="let user of users" [value]="user.id">{{ user.name }}</option>      
+        </select>
+    </div>
+    <div class="col-12">
+        <span class="text-dark">Categoria:</span>
+        <select id="typeCategory" class="form-select mb-3 mt-2 border border-2 border-dark" [style.height]="'55px'">
+            <option [value]="" selected>Selecione a Categoria</option>
+            <option *ngFor="let category of category" [value]="category.id">{{ category.name }}</option>      
+        </select>
+    </div>
+</form>
+
+<!-- Success Start -->
+<div id="box-success" [ngClass]="boxSuccess ? 'd-none' : 'd-flex justify-content-center py-1 my-2 mx-4 rounded-3 text-light bg-success'">
+    <i id="icon-success" class="bi bi-check"></i>
+    <div id="msg-success">Blog enviada com sucesso!</div>
+</div>
+<!-- Success End -->
+
+<!-- Error Start -->
+<div [ngClass]="boxError ? 'd-none' : 'd-flex justify-content-center py-1 my-2 mx-4 rounded-3 text-light bg-danger'">
+    <i class="bi bi-exclamation-triangle px-1"></i>
+    <div>{{ msgError.msg }}</div>
+</div>
+<!-- Error End -->
+
+<div class="mx-4">
+    <button class="btn btn-dark" (click)='Send()' [style.border-radius]="'5px'">Enviar</button>
+    <button class="btn mx-2" (click)='Cancel()'
+        [style.border-radius]="'5px'" [style.background]="'#adadad'" [style.color]="'#fff'">Cancelar</button>
+</div>

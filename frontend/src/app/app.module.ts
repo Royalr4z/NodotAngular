@@ -31,6 +31,8 @@ import { SigninComponent } from './Page/signin/signin.component';
 import { LoginComponent } from './Template/login/login.component';
 import { SignupComponent } from './Page/signup/signup.component';
 import { RegisterComponent } from './Template/register/register.component';
+import { BlogCreationComponent } from './Page/Admin/blog-creation/blog-creation.component';
+import { BlogInsertComponent } from './Template/Admin/blog-insert/blog-insert.component';
 
 @NgModule({
   declarations: [
@@ -61,6 +63,8 @@ import { RegisterComponent } from './Template/register/register.component';
     LoginComponent,
     SignupComponent,
     RegisterComponent,
+    BlogCreationComponent,
+    BlogInsertComponent,
   ],
   imports: [
     BrowserModule,

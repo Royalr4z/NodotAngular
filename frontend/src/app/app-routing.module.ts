@@ -12,10 +12,15 @@ import { PageErrorComponent } from './Page/page-error/page-error.component';
 import { PageBlogComponent } from './Page/page-blog/page-blog.component';
 import { DetailComponent } from './Page/detail/detail.component';
 import { SigninComponent } from './Page/signin/signin.component';
-import { SignupComponent } from './Page//signup/signup.component';
+import { SignupComponent } from './Page/signup/signup.component';
 
+import { BlogCreationComponent } from './Page/Admin/blog-creation/blog-creation.component';
+
+const admin = localStorage.getItem('admin');
 
 const routes: Routes = [
+  { path: 'blog-creation', component: admin ? BlogCreationComponent : PageErrorComponent},
+
   { path: 'signup', component:  SignupComponent },
   { path: 'signin', component:  SigninComponent },
   { path: 'detail', component:  DetailComponent },
