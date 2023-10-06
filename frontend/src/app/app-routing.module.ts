@@ -11,9 +11,11 @@ import { PageContactComponent } from './Page/page-contact/page-contact.component
 import { PageErrorComponent } from './Page/page-error/page-error.component';
 import { PageBlogComponent } from './Page/page-blog/page-blog.component';
 import { DetailComponent } from './Page/detail/detail.component';
+import { SigninComponent } from './Page/signin/signin.component';
 
 
 const routes: Routes = [
+  { path: 'signin', component:  SigninComponent },
   { path: 'detail', component:  DetailComponent },
   { path: 'blog', component:  PageBlogComponent },
   { path: 'contact', component:  PageContactComponent },

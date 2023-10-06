@@ -47,9 +47,9 @@ export class BlogContentComponent implements OnInit {
     this.http.get(`${BaseUrl}/blogs/orderby`)
       .subscribe((response: any) => {
         
-        this.posts = response.data.blog.map((post: any) => {
+        this.posts = response.map((post: any) => {
           if (!post.imageUrl) {
-            post.imageUrl = 'imgBlog2';
+            post.imageUrl = '../../../assets/img/blog-2.jpg';
           }
           return post;
         });

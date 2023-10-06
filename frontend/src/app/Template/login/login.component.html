@@ -1,0 +1,55 @@
+<section class="vh-100 gradient-custom">
+    <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                <div class="card bg-dark text-white py-5" 
+                [style.border-radius]="'1rem'" [style.border-bottom]="'3px solid #00b7ff'"
+                [style.border-right]="'3px solid #00b7ff'">
+                    <div class="card-body p-5 text-center">
+
+                        <!-- SuccessMsg Start -->
+                        <div [ngClass]="boxSuccess ? 'd-none' : 'text-light bg-success border-radius rounded-3 my-2 py-1'">
+                            <i class="bi bi-check"></i>
+                            <span>Usuário Conectado Com Sucesso.</span>
+                        </div>
+                        <!-- SuccessMsg End -->
+
+                        <!-- ErrorMsg Start -->
+                        <div [ngClass]="boxError ? 'd-none' : 'text-light bg-danger border-radius rounded-3 my-2 py-1'">
+                            <i class="bi bi-exclamation-triangle px-1"></i>
+                            <span>{{ msgError.msg }}</span>
+                        </div>
+                        <!-- ErrorMsg End -->
+
+                        <div class="mb-md-5 mt-md-4 pb-5">
+                            <a href="/" class="p-0 mb-5"
+                                [style.font-size]="'4rem'">
+                                <i class="bi bi-globe2 text-light"></i>
+                        </a>
+
+                        <h2 class="fw-bold mb-2 text-uppercase text-primary mt-3">Login</h2>
+                        <p class="text-light-50 mb-5">Por favor, digite seu login e senha!</p>
+
+                        <div class="form-outline form-white mb-4">
+                            <input type="email" id="typeEmail" class="form-control form-control-lg" placeholder="E-mail" />
+                        </div>
+
+                        <div class="form-outline form-white mb-4">
+                            <input type="password" id="typePassword" class="form-control form-control-lg" placeholder="Senha" />
+                        </div>
+
+                        <!-- <p class="small mb-5 pb-lg-2"><a class="text-white-50" href="#!">Esqueceu a senha?</a></p> -->
+
+                        <button (click)="connectUser()" class="btn btn-outline-light btn-lg px-5" type="submit">Login</button>
+                    </div>
+                    <div>
+                        <p class="mb-0">Não tem uma conta? <a href="signup" class="text-white-50 fw-bold">Inscrever-se</a>
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</section >

@@ -27,6 +27,8 @@ import { PageBlogComponent } from './Page/page-blog/page-blog.component';
 import { BlogComponent } from './Template/blog/blog.component';
 import { DetailComponent } from './Page/detail/detail.component';
 import { BlogContentComponent } from './Template/blog-content/blog-content.component';
+import { SigninComponent } from './Page/signin/signin.component';
+import { LoginComponent } from './Template/login/login.component';
 
 @NgModule({
   declarations: [
@@ -53,6 +55,8 @@ import { BlogContentComponent } from './Template/blog-content/blog-content.compo
     BlogComponent,
     DetailComponent,
     BlogContentComponent,
+    SigninComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
