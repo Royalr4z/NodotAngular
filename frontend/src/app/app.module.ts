@@ -25,6 +25,8 @@ import { ContactUsComponent } from './Template/contact-us/contact-us.component';
 import { PageContactComponent } from './Page/page-contact/page-contact.component';
 import { PageBlogComponent } from './Page/page-blog/page-blog.component';
 import { BlogComponent } from './Template/blog/blog.component';
+import { DetailComponent } from './Page/detail/detail.component';
+import { BlogContentComponent } from './Template/blog-content/blog-content.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +51,8 @@ import { BlogComponent } from './Template/blog/blog.component';
     PageContactComponent,
     PageBlogComponent,
     BlogComponent,
+    DetailComponent,
+    BlogContentComponent,
   ],
   imports: [
     BrowserModule,

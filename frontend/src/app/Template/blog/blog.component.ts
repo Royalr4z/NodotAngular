@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
-import { BaseUrl } from '../../../BaseUrl';
+import { BaseUrl } from 'src/BaseUrl';
 
 @Component({
   selector: 'app-blog',

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { BaseUrl } from '../../../BaseUrl'
+import { BaseUrl } from 'src/BaseUrl'
 
 @Component({
   selector: 'app-quote',

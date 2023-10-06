@@ -10,8 +10,11 @@ import { WebDevelopmentComponent } from './Page/web-development/web-development.
 import { PageContactComponent } from './Page/page-contact/page-contact.component';
 import { PageErrorComponent } from './Page/page-error/page-error.component';
 import { PageBlogComponent } from './Page/page-blog/page-blog.component';
+import { DetailComponent } from './Page/detail/detail.component';
+
 
 const routes: Routes = [
+  { path: 'detail', component:  DetailComponent },
   { path: 'blog', component:  PageBlogComponent },
   { path: 'contact', component:  PageContactComponent },
   { path: 'web-development', component:  WebDevelopmentComponent },
