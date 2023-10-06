@@ -19,13 +19,13 @@ export class IndexblogComponent {
         (response: any) => {
           this.blogs = response.blog;
           if (this.blogs.length === 0){
-            this.loading = false;
-          } else {
             this.loading = true;
+          } else {
+            this.loading = false;
           }
         },
         (error) => {
-          this.loading = false;
+          this.loading = true;
         }
       );
   }

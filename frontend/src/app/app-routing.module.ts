@@ -9,8 +9,10 @@ import { PentestComponent } from './Page/pentest/pentest.component';
 import { WebDevelopmentComponent } from './Page/web-development/web-development.component';
 import { PageContactComponent } from './Page/page-contact/page-contact.component';
 import { PageErrorComponent } from './Page/page-error/page-error.component';
+import { PageBlogComponent } from './Page/page-blog/page-blog.component';
 
 const routes: Routes = [
+  { path: 'blog', component:  PageBlogComponent },
   { path: 'contact', component:  PageContactComponent },
   { path: 'web-development', component:  WebDevelopmentComponent },
   { path: 'pentest', component:  PentestComponent },
