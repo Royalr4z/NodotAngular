@@ -9,8 +9,8 @@ import { BaseUrl } from 'src/BaseUrl'
 })
 export class LoginComponent {
   msgError: any = {};
-  boxSuccess: boolean = true;
-  boxError: boolean = true;
+  boxSuccess: boolean = false;
+  boxError: boolean = false;
 
   constructor(private http: HttpClient) { }
 
@@ -29,9 +29,9 @@ export class LoginComponent {
     this.http.post(`${BaseUrl}/signin`, dados, options)
     .subscribe(
       (response: any) => {
-        if (response.status === 204) {
-          this.boxError = true;
-          this.boxSuccess = false;
+        if (response.admin) {
+          this.boxError = false;
+          this.boxSuccess = true;
 
           (<HTMLInputElement>document.querySelector('#typeEmail')).value = '';
           (<HTMLInputElement>document.querySelector('#typePassword')).value = '';
@@ -46,12 +46,10 @@ export class LoginComponent {
             localStorage.setItem("token", response.token);
             window.location.href = '/blog-creation';
           }, 1500);
-        } else {
-          return;
         }
       },
       (error: any) => {
-        this.boxError = false;
+        this.boxError = true;
 
         this.msgError = {
           msg: error.error,

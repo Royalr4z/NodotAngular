@@ -29,6 +29,8 @@ import { DetailComponent } from './Page/detail/detail.component';
 import { BlogContentComponent } from './Template/blog-content/blog-content.component';
 import { SigninComponent } from './Page/signin/signin.component';
 import { LoginComponent } from './Template/login/login.component';
+import { SignupComponent } from './Page/signup/signup.component';
+import { RegisterComponent } from './Template/register/register.component';
 
 @NgModule({
   declarations: [
@@ -57,6 +59,8 @@ import { LoginComponent } from './Template/login/login.component';
     BlogContentComponent,
     SigninComponent,
     LoginComponent,
+    SignupComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,
