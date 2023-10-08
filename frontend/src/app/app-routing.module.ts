@@ -15,11 +15,15 @@ import { SigninComponent } from './Page/signin/signin.component';
 import { SignupComponent } from './Page/signup/signup.component';
 
 import { BlogCreationComponent } from './Page/Admin/blog-creation/blog-creation.component';
+import { CategoryCreationComponent } from './Page/Admin/category-creation/category-creation.component';
+import { PageUsersTableComponent } from './Page/Admin/page-users-table/page-users-table.component';
 
 const admin = localStorage.getItem('admin');
 
 const routes: Routes = [
   { path: 'blog-creation', component: admin ? BlogCreationComponent : PageErrorComponent},
+  { path: 'category-creation', component: admin ? CategoryCreationComponent : PageErrorComponent},
+  { path: 'users-table', component: admin ? PageUsersTableComponent : PageErrorComponent},
 
   { path: 'signup', component:  SignupComponent },
   { path: 'signin', component:  SigninComponent },

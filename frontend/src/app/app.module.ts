@@ -33,6 +33,10 @@ import { SignupComponent } from './Page/signup/signup.component';
 import { RegisterComponent } from './Template/register/register.component';
 import { BlogCreationComponent } from './Page/Admin/blog-creation/blog-creation.component';
 import { BlogInsertComponent } from './Template/Admin/blog-insert/blog-insert.component';
+import { CategoryCreationComponent } from './Page/Admin/category-creation/category-creation.component';
+import { CategoryInsertComponent } from './Template/Admin/category-insert/category-insert.component';
+import { PageUsersTableComponent } from './Page/Admin/page-users-table/page-users-table.component';
+import { UsersTableComponent } from './Template/Admin/users-table/users-table.component';
 
 @NgModule({
   declarations: [
@@ -65,6 +69,10 @@ import { BlogInsertComponent } from './Template/Admin/blog-insert/blog-insert.co
     RegisterComponent,
     BlogCreationComponent,
     BlogInsertComponent,
+    CategoryCreationComponent,
+    CategoryInsertComponent,
+    PageUsersTableComponent,
+    UsersTableComponent,
   ],
   imports: [
     BrowserModule,

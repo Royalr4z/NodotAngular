@@ -1,0 +1,50 @@
+<nav aria-label="..." class="mx-4">
+    <ul class="pagination pagination-md">
+      <li class="page-item bg-dark" aria-current="page">
+        <a class="page-link bg-dark" routerLink="/blog-creation">Blogs</a>
+      </li>
+      <li class="page-item active">
+        <a class="page-link" routerLink="/users-table">Usuários</a>
+      </li>
+      <li class="page-item">
+        <a class="page-link bg-dark" routerLink="/category-creation">Categorias</a>
+      </li>
+    </ul>
+  </nav>
+  <div *ngIf="!error; else usersTable">
+    <app-error status="401"></app-error>
+  </div>
+  <ng-template #usersTable>
+    <table id="table" class="table bg-dark text-light table-hover" style="border-top: 5px solid #b3b3b3; border-bottom: 5px solid #b3b3b3;">
+      <thead>
+        <tr>
+          <th (click)="sortTable(0, 'string', 'ascending', icon0)" data-column="0" data-type="string" data-order="ascending">ID
+            <i #icon0 class="bi" [ngClass]="{'bi-sort-up': true, 'bi-sort-down': false}"></i>
+          </th>
+          <th (click)="sortTable(1, 'string', 'ascending', icon1)" data-column="1" data-type="string" data-order="ascending">Name
+            <i #icon1 class="bi bi-sort"></i>
+          </th>
+          <th (click)="sortTable(2, 'string', 'ascending', icon2)" data-column="2" data-type="string" data-order="ascending">Email
+            <i #icon2 class="bi bi-sort"></i>
+          </th>
+          <th (click)="sortTable(3, 'string', 'ascending', icon3)" data-column="3" data-type="string" data-order="ascending">Admin
+            <i #icon3 class="bi bi-sort"></i>
+          </th>
+          <!-- Add more columns here if needed -->
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users; let i = index">
+          <td>{{ user.id }}</td>
+          <td>{{ user.name }}</td>
+          <td>{{ user.email }}</td>
+          <td>
+            <i *ngIf="user.admin" class="bi bi-check-square"></i>
+            <i *ngIf="!user.admin" class="bi bi-square"></i>
+          </td>
+          <!-- Add more columns here if needed -->
+        </tr>
+      </tbody>
+    </table>
+  </ng-template>
+  
