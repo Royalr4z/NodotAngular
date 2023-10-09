@@ -31,12 +31,16 @@ export class UsersTableComponent implements OnInit {
     );
   }
 
-  sortTable(column: number, type: string, order: string, icon: any) {
-    // Implement your sorting logic here
-  }
-
-  toggleSortIcon(icon: any) {
-    // Implement your toggleSortIcon logic here
+  isAscending = true;
+  sortTable(column: string) {
+    if (column === 'id') {
+      if (this.isAscending) {
+        this.users.sort((a, b) => a.id - b.id);
+      } else {
+        this.users.sort((a, b) => b.id - a.id);
+      }
+      this.isAscending = !this.isAscending;
+    }
   }
 }
 

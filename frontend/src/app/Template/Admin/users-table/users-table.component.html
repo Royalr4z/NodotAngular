@@ -12,23 +12,23 @@
     </ul>
   </nav>
   <div *ngIf="!error; else usersTable">
-    <app-error status="401"></app-error>
+    <app-error [status]="'500'"></app-error>
   </div>
   <ng-template #usersTable>
-    <table id="table" class="table bg-dark text-light table-hover" style="border-top: 5px solid #b3b3b3; border-bottom: 5px solid #b3b3b3;">
+    <table id="table" class="table bg-dark text-light table-hover" [style.border]="'8px solid #b3b3b3'">
       <thead>
         <tr>
-          <th (click)="sortTable(0, 'string', 'ascending', icon0)" data-column="0" data-type="string" data-order="ascending">ID
-            <i #icon0 class="bi" [ngClass]="{'bi-sort-up': true, 'bi-sort-down': false}"></i>
+          <th (click)="sortTable('id')" data-column="0" [style.cursor]="'pointer'">ID
+            <i class="bi" [ngClass]="{'bi-sort-up': isAscending, 'bi-sort-down': !isAscending}"></i>
           </th>
-          <th (click)="sortTable(1, 'string', 'ascending', icon1)" data-column="1" data-type="string" data-order="ascending">Name
-            <i #icon1 class="bi bi-sort"></i>
+          <th data-column="1">Name
+            <i class="bi bi-sort"></i>
           </th>
-          <th (click)="sortTable(2, 'string', 'ascending', icon2)" data-column="2" data-type="string" data-order="ascending">Email
-            <i #icon2 class="bi bi-sort"></i>
+          <th data-column="2">Email
+            <i class="bi bi-sort"></i>
           </th>
-          <th (click)="sortTable(3, 'string', 'ascending', icon3)" data-column="3" data-type="string" data-order="ascending">Admin
-            <i #icon3 class="bi bi-sort"></i>
+          <th data-column="3">Admin
+            <i class="bi bi-sort"></i>
           </th>
           <!-- Add more columns here if needed -->
         </tr>
