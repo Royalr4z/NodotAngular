@@ -1,1 +1,85 @@
-<p>category-insert works!</p>
+<nav aria-label="..." class="mx-4">
+    <ul class="pagination pagination-md">
+        <li class="page-item" aria-current="page" >
+            <a class="page-link bg-dark" href="/blog-creation">Blogs</a>
+        </li>
+        <li class="page-item">
+            <a class="page-link bg-dark" href="/users-table">Usuários</a>
+        </li>
+        <li class="page-item active">
+            <a class="page-link" href="/category-creation">Categorias</a>
+        </li>
+    </ul>
+</nav>
+
+<!-- Success Start -->
+<div [ngClass]="boxSuccess ? 'd-none' : 'd-flex justify-content-center py-1 my-2 mx-4 rounded-3 text-light bg-success'">
+    <i class="bi bi-check"></i>
+    <div id="msg-success">Categoria enviada com sucesso!</div>
+</div>
+<!-- Success End -->
+
+<!-- Error Start -->
+<div [ngClass]="boxError ? 'd-none' : 'd-flex justify-content-center py-1 my-2 mx-4 rounded-3 text-light bg-danger'">
+    <i class="bi bi-exclamation-triangle px-1"></i>
+    <div>{{ msgError.msg }}</div>
+</div>
+<!-- Error End -->
+
+<form class="m-4">
+    <div class="mb-3">
+        <label class="col-form-label text-dark">Nome:</label>
+        <input type="text" class="form-control" id="typeName"/>
+    </div>
+    <div class="mb-3">
+        <label class="col-form-label text-dark">Descrição:
+            <span class="text-danger">(Limite - 250 caracteres)</span></label>
+        <textarea class="form-control" id="typeSubtitle"></textarea>
+    </div>
+</form>
+
+<div class="mx-4">
+    <button class="btn btn-warning" style="border-radius: 5px" (click)="editar()" *ngIf="mode === 'edit'">Editar</button>
+    <button class="btn btn-danger" style="border-radius: 5px" (click)="deletar()" *ngIf="mode === 'delete'">Deletar</button>
+    <button class="btn btn-dark" id="button-config" style="border-radius: 5px" (click)="Send()" *ngIf="!mode">Enviar</button>
+    <button class="btn mx-2" (click)="Cancel()" style="border-radius: 5px; background: #adadad; color: #fff">Cancelar</button>
+</div>
+
+<!-- Form End -->
+
+<!-- Table Start -->
+
+<table id="table" class="table bg-dark text-light table-hover mt-5"
+    [style.border]="'8px solid #b3b3b3'">
+    <thead>
+        <tr>
+            <th (click)="sortTable('id')" scope="col"
+            [style.cursor]="'pointer'" class="px-2">
+                ID<i class="bi mx-0" [ngClass]="{'bi-sort-up': isAscending, 'bi-sort-down': !isAscending}"></i></th>
+            <th scope="col">
+                Categoria</th>
+            <th scope="col">
+                Descrição</th>
+            <th scope="col">Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let category of categories; let index = index">
+            <td>{{ category.id }}</td>
+            <td>{{ category.name }}</td>
+            <td>{{ category.subtitle }}</td>
+            <td>
+                <a [routerLink]="['/category-creation']" [queryParams]="{ id: category.id, mode: 'edit' }"
+                    class="btn btn-warning text-dark my-1"
+                    style="border-radius: 10px; padding: 5px 10px; margin: 0px 5px">
+                    <i class="bi bi-pencil"></i>
+                </a>
+                <a [routerLink]="['/category-creation']" [queryParams]="{ id: category.id, mode: 'delete' }"
+                    class="btn btn-danger m-1"
+                    style="border-radius: 10px; padding: 5px 10px">
+                    <i class="bi bi-trash"></i>
+                </a>
+            </td>
+        </tr>
+    </tbody>
+</table>
