@@ -25,13 +25,15 @@ export class BlogComponent implements OnInit {
     this.route.queryParamMap.subscribe((params: ParamMap) => {
       this.categoryUrl = params.get('category');
       this.paginationUrl = params.get('pg');
+
+      const paginationValue = parseInt(this.paginationUrl || '0', 10); 
       
-      if (this.categoryUrl && parseInt(this.paginationUrl || '0', 10) && this.paginationUrl !== null) {
-        window.location.href = `./blog?pg=1&category=${this.categoryUrl}`;
+      if (this.categoryUrl && paginationValue <= 0 && this.paginationUrl !== null) {
+        window.location.href = `/blog?pg=1&category=${this.categoryUrl}`;
       } 
       
-      if (!this.categoryUrl && parseInt(this.paginationUrl || '0', 10) && this.paginationUrl !== null) {
-        window.location.href = `./blog?pg=1`;
+      if (!this.categoryUrl && paginationValue <= 0 && this.paginationUrl !== null) {
+        window.location.href = `/blog?pg=1`;
       }
 
       if (!this.paginationUrl) {
@@ -102,9 +104,9 @@ export class BlogComponent implements OnInit {
     if (this.paginationUrl !== null) {
       let currentPage = Number(this.paginationUrl);
       currentPage++;
-      window.location.href = `./blog?pg=${currentPage}`;
+      window.location.href = `/blog?pg=${currentPage}`;
     } else {
-      window.location.href = `./blog?pg=2`;
+      window.location.href = `/blog?pg=2`;
     }
   }
 
@@ -115,16 +117,16 @@ export class BlogComponent implements OnInit {
 
     let currentPage = Number(this.paginationUrl);
     currentPage--;
-    window.location.href = `./blog?pg=${currentPage}`;
+    window.location.href = `/blog?pg=${currentPage}`;
   }
 
   nextFilter(): void {
     if (this.paginationUrl !== null) {
       let currentPage = Number(this.paginationUrl);
       currentPage++;
-      window.location.href = `./blog?pg=${currentPage}&category=${this.categoryUrl}`;
+      window.location.href = `/blog?pg=${currentPage}&category=${this.categoryUrl}`;
     } else {
-      window.location.href = `./blog?pg=2&category=${this.categoryUrl}`;
+      window.location.href = `/blog?pg=2&category=${this.categoryUrl}`;
     }
   }
 
@@ -135,6 +137,6 @@ export class BlogComponent implements OnInit {
 
     let currentPage = Number(this.paginationUrl);
     currentPage--;
-    window.location.href = `./blog?pg=${currentPage}&category=${this.categoryUrl}`;
+    window.location.href = `/blog?pg=${currentPage}&category=${this.categoryUrl}`;
   }
 }
