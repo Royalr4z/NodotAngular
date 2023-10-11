@@ -1,22 +1,22 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { HomeComponent } from './Page/home/home.component';
-import { ServiceComponent } from './Page/service/service.component';
-import { AutoTaskComponent } from './Page/auto-task/auto-task.component';
-import { InfrastructureComponent } from './Page/infrastructure/infrastructure.component';
-import { PentestComponent } from './Page/pentest/pentest.component';
-import { WebDevelopmentComponent } from './Page/web-development/web-development.component';
-import { PageContactComponent } from './Page/page-contact/page-contact.component';
-import { PageErrorComponent } from './Page/page-error/page-error.component';
-import { PageBlogComponent } from './Page/page-blog/page-blog.component';
-import { DetailComponent } from './Page/detail/detail.component';
-import { SigninComponent } from './Page/signin/signin.component';
-import { SignupComponent } from './Page/signup/signup.component';
+import { HomeComponent } from './Pages/home/home.component';
+import { ServiceComponent } from './Pages/service/service.component';
+import { AutoTaskComponent } from './Pages/auto-task/auto-task.component';
+import { InfrastructureComponent } from './Pages/infrastructure/infrastructure.component';
+import { PentestComponent } from './Pages/pentest/pentest.component';
+import { WebDevelopmentComponent } from './Pages/web-development/web-development.component';
+import { PageContactComponent } from './Pages/page-contact/page-contact.component';
+import { PageErrorComponent } from './Pages/page-error/page-error.component';
+import { PageBlogComponent } from './Pages/page-blog/page-blog.component';
+import { DetailComponent } from './Pages/detail/detail.component';
+import { SigninComponent } from './Pages/signin/signin.component';
+import { SignupComponent } from './Pages/signup/signup.component';
 
-import { BlogCreationComponent } from './Page/Admin/blog-creation/blog-creation.component';
-import { CategoryCreationComponent } from './Page/Admin/category-creation/category-creation.component';
-import { PageUsersTableComponent } from './Page/Admin/page-users-table/page-users-table.component';
+import { BlogCreationComponent } from './Pages/Admin/blog-creation/blog-creation.component';
+import { CategoryCreationComponent } from './Pages/Admin/category-creation/category-creation.component';
+import { PageUsersTableComponent } from './Pages/Admin/page-users-table/page-users-table.component';
 
 const admin = localStorage.getItem('admin');
 
