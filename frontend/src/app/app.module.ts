@@ -37,6 +37,7 @@ import { CategoryCreationComponent } from './Pages/Admin/category-creation/categ
 import { CategoryInsertComponent } from './Template/Admin/category-insert/category-insert.component';
 import { PageUsersTableComponent } from './Pages/Admin/page-users-table/page-users-table.component';
 import { UsersTableComponent } from './Template/Admin/users-table/users-table.component';
+import { LoadingComponent } from './Template/loading/loading.component';
 
 @NgModule({
   declarations: [
@@ -73,6 +74,7 @@ import { UsersTableComponent } from './Template/Admin/users-table/users-table.co
     CategoryInsertComponent,
     PageUsersTableComponent,
     UsersTableComponent,
+    LoadingComponent,
   ],
   imports: [
     BrowserModule,

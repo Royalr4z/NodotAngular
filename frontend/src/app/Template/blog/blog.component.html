@@ -5,9 +5,8 @@
             <div class="col-lg-8">
                 <div class="row g-5">
                     <div *ngIf="loading">
-                        <!-- Renderizar algum conteúdo de carregamento aqui, por exemplo: -->
-                        <p>Loading...</p>
-                      </div>
+                      <app-loading/> 
+                    </div>
                       <ng-container *ngIf="!loading; else loadingContent">
                         <!-- Renderizar a lista de blogs aqui -->
                         <div *ngFor="let blog of blogs" class="col-md-6 wow slideInUp mb-4" data-wow-delay="0.1s" [id]="'item-' + blog.id">
