@@ -45,12 +45,12 @@ export class RegisterComponent {
             }, 2000);
           }
         },
-        (error: any) => {
+        (err: any) => {
           this.boxError = true;
-          this.msgError = {
-            msg: error.error,
-            status: error.status,
-          };
+
+          this.msgError = (err.statusText === "Unknown Error")
+          ? { msg: "Error 500", status: 500 }
+          : { msg: err.error, status: 400 };
         }
       );
   }

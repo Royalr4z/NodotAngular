@@ -49,13 +49,12 @@ export class QuoteComponent {
             (<HTMLTextAreaElement>document.querySelector('#typeMessage')).value = '';
           }
         },
-        (error) => {
+        (err) => {
           this.boxError = false;
 
-          this.msgError = {
-            msg: error.error,
-            status: error.status,
-          };
+          this.msgError = (err.statusText === "Unknown Error")
+          ? { msg: "Error 500", status: 500 }
+          : { msg: err.error, status: 400 };
         }
       );
   }

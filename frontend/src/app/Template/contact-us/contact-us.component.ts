@@ -42,13 +42,12 @@ export class ContactUsComponent {
           window.location.href = '/contact';
         }, 2000);
       },
-      (error) => {
+      (err) => {
         this.boxError = false;
-
-        this.msgError = {
-          msg: error.error,
-          status: 400
-        };
+        
+        this.msgError = (err.statusText === "Unknown Error")
+        ? { msg: "Error 500", status: 500 }
+        : { msg: err.error, status: 400 };
       }
     );
   }
