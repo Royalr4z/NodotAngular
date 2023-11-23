@@ -1,8 +1,8 @@
 version: '3'
-networks:
-  banco:
-  app:
-  web:
+# networks:
+#   banco:
+#   app:
+#   web:
 services:
   db:
     image: postgres:15.2
@@ -11,27 +11,63 @@ services:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: 123456
       POSTGRES_DB: nodotdb
-    networks:
-      - banco
+    # networks:
+    #   - banco
+  sonarqube:
+    image: sonarqube:latest
+    ports:
+      - "9000:9000"
+      - "9092:9092"  # Adicione esta porta se estiver usando o scanner para TypeScript
+    # networks:
+    #   - app
+    environment:
+      - SONARQUBE_JDBC_URL=jdbc:postgresql://db:5432/sonar
+      - SONARQUBE_JDBC_USERNAME=sonar
+      - SONARQUBE_JDBC_PASSWORD=sonar
+    volumes:
+      - sonarqube_data:/opt/sonarqube/data
+      - sonarqube_extensions:/opt/sonarqube/extensions
+      - sonarqube_logs:/opt/sonarqube/logs
+      - sonarqube_temp:/opt/sonarqube/temp
+    depends_on:
+      - db
   backend:
     image: node:18.16.0
     volumes:
       - ./backend:/backend
     ports:
       - 4000:4000
-    networks:
-      - app
+    # networks:
+    #   - app
     depends_on:
       - db
-    command: bash -c "cd /backend && npm i && npx knex migrate:latest && npm run prod"
-  frontend:
-    image: node:18.16.0
-    volumes:
-      - ./frontend:/frontend
-    ports:
-      - 4200:4200
-    networks:
-      - web
-    depends_on:
-      - backend
-    command: bash -c "cd /frontend && npm i && npm start"
+      - sonarqube
+    command:   bash -c "
+      cd /backend &&
+      npm cache clean --force &&
+      rm -rf node_modules &&
+      npm i &&
+      npx knex migrate:latest &&
+      npm run prod &&
+      npm run sonar-scanner"
+  # frontend:
+  #   image: node:18.16.0
+  #   volumes:
+  #     - ./frontend:/frontend
+  #   ports:
+  #     - 4200:4200
+  #   networks:
+  #     - web
+  #   depends_on:
+  #     - backend
+  #   command: bash -c "
+  #       cd /frontend &&
+  #       npm cache clean --force &&
+  #       rm -rf node_modules &&
+  #       npm i && npm start"
+
+volumes:
+  sonarqube_data:
+  sonarqube_extensions:
+  sonarqube_logs:
+  sonarqube_temp:

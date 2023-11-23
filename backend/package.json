@@ -17,7 +17,9 @@
     "//comments-info": "API Information",
     "monit": "pm2 monit",
     "list": "pm2 list",
-    "logs": "pm2 logs"
+    "logs": "pm2 logs",
+
+    "sonar-scanner": "sonar-scanner"
   },
   "keywords": [],
   "author": "",
