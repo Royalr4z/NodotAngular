@@ -38,21 +38,20 @@ services:
       rm -rf node_modules &&
       npm i &&
       npx knex migrate:latest &&
-      npm run prod &&
-      npm run sonar-scanner"
-  # frontend:
-  #   image: node:18.16.0
-  #   volumes:
-  #     - ./frontend:/frontend
-  #   ports:
-  #     - 4200:4200
-  #   depends_on:
-  #     - backend
-  #   command: bash -c "
-  #       cd /frontend &&
-  #       npm cache clean --force &&
-  #       rm -rf node_modules &&
-  #       npm i && npm start"
+      npm run prod"
+  frontend:
+    image: node:18.16.0
+    volumes:
+      - ./frontend:/frontend
+    ports:
+      - 4200:4200
+    depends_on:
+      - backend
+    command: bash -c "
+        cd /frontend &&
+        npm cache clean --force &&
+        rm -rf node_modules &&
+        npm i && npm start"
 
 volumes:
   sonarqube_data:
