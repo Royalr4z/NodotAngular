@@ -7,22 +7,6 @@ services:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: 123456
       POSTGRES_DB: nodotdb
-  sonarqube:
-    image: sonarqube:latest
-    ports:
-      - "9000:9000"
-      - "9092:9092"  # Adicione esta porta se estiver usando o scanner para TypeScript
-    environment:
-      - SONARQUBE_JDBC_URL=jdbc:postgresql://db:5432/sonar
-      - SONARQUBE_JDBC_USERNAME=sonar
-      - SONARQUBE_JDBC_PASSWORD=sonar
-    volumes:
-      - sonarqube_data:/opt/sonarqube/data
-      - sonarqube_extensions:/opt/sonarqube/extensions
-      - sonarqube_logs:/opt/sonarqube/logs
-      - sonarqube_temp:/opt/sonarqube/temp
-    depends_on:
-      - db
   backend:
     image: node:18.16.0
     volumes:
@@ -53,8 +37,3 @@ services:
         rm -rf node_modules &&
         npm i && npm start"
 
-volumes:
-  sonarqube_data:
-  sonarqube_extensions:
-  sonarqube_logs:
-  sonarqube_temp:
