@@ -15,7 +15,6 @@ services:
       - 4000:4000
     depends_on:
       - db
-      - sonarqube
     command:   bash -c "
       cd /backend &&
       npm cache clean --force &&
