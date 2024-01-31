@@ -7,7 +7,7 @@ module.exports = (app :any) => {
             date: req.body.date,
             title: req.body.title,
             subtitle: req.body.subtitle,
-            imageUrl: req.body.imageUrl,
+            imageurl: req.body.imageurl,
             content: req.body.content,
             categoryid: req.body.categoryid,
             userid: req.body.userid
