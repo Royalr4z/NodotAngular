@@ -16,6 +16,7 @@ frontend/out-tsc
 frontend/bazel-out
 
 # Node
+frontend/package-lock.json
 frontend/node_modules
 frontendnpm-debug.log
 frontend/yarn-error.log

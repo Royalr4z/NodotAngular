@@ -46,8 +46,8 @@ export class BlogComponent implements OnInit {
     this.http.get(`${BaseUrl}/blogs/orderby`)
       .subscribe((response: any) => {
         this.posts = response.blog.map((post: any) => {
-          if (!post.imageUrl) {
-            post.imageUrl = '../../../assets/img/blog-2.jpg';
+          if (!post.imageurl) {
+            post.imageurl = '../../../assets/img/blog-2.jpg';
           }
           return post;
         });
@@ -87,8 +87,8 @@ export class BlogComponent implements OnInit {
         }
 
         const blogData = response.blog.map((blog: any) => {
-          if (!blog.imageUrl) {
-            blog.imageUrl = '../../../assets/img/blog-2.jpg';
+          if (!blog.imageurl) {
+            blog.imageurl = '../../../assets/img/blog-2.jpg';
           }
           this.loading = false;
           return blog;
