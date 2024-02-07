@@ -31,19 +31,19 @@
                         <p class="text-light-50 mb-3">Por favor, digite seu nome, E-mail e senha!</p>
 
                         <div class="form-outline form-white mb-4">
-                            <input type="name" id="typeName" class="form-control form-control-lg" placeholder="Nome" />
+                            <input onkeydown="if(event.keyCode==13) document.getElementById('typeEmail').focus()" type="name" id="typeName" class="form-control form-control-lg" placeholder="Nome" />
                         </div>
 
                         <div class="form-outline form-white mb-4">
-                            <input type="email" id="typeEmail" class="form-control form-control-lg" placeholder="E-mail" />
+                            <input onkeydown="if(event.keyCode==13) document.getElementById('typePassword').focus()" type="email" id="typeEmail" class="form-control form-control-lg" placeholder="E-mail" />
                         </div>
 
                         <div class="form-outline form-white mb-4">
-                            <input type="password" id="typePassword" class="form-control form-control-lg" placeholder="Senha" />
+                            <input onkeydown="if(event.keyCode==13) document.getElementById('typeConfirmPassword').focus()" type="password" id="typePassword" class="form-control form-control-lg" placeholder="Senha" />
                         </div>
 
                         <div class="form-outline form-white mb-4">
-                            <input type="password" id="typeConfirmPassword" class="form-control form-control-lg" placeholder="Confirmação de senha" />
+                            <input (keydown.enter)="registerData()" type="password" id="typeConfirmPassword" class="form-control form-control-lg" placeholder="Confirmação de senha" />
                         </div>
 
                         <button (click)='registerData()' class="btn btn-outline-light btn-lg px-5 mt-2" type="submit">Cadastre-se</button>
