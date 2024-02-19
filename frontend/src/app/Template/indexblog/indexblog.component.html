@@ -9,7 +9,7 @@
                 <div *ngFor="let blog of blogs; let index = index" class="col-lg-4 wow slideInUp">
                     <div class="blog-item bg-light rounded overflow-hidden">
                         <div class="blog-img position-relative overflow-hidden">
-                            <img class="img-fluid border-1 border-top border-start border-end border-gray" [src]="blog.imageurl || '../../../assets/img/blog-2.jpg'" alt="" style="height: 25vh; width: 100vh;" />
+                            <img class="img-fluid border-1 border-top border-start border-end border-gray" [src]="blog.imageUrl || '../../../assets/img/blog-2.jpg'" alt="" style="height: 25vh; width: 100vh;" />
                             <a class="position-absolute top-0 start-0 bg-primary text-white rounded-end mt-5 py-2 px-4" [href]="'blog?category=' + blog.categoryName">
                                 {{ blog.categoryName }}
                             </a>
@@ -26,7 +26,7 @@
                                 </small>
                             </div>
                             <h4 class="mb-3">{{ blog.title }}</h4>
-                            <p>{{ blog.subtitle }}</p>
+                            <p id="blogSubtitle">{{ blog.subtitle }}</p>
                             <a class="text-uppercase" [href]="'detail?id=' + blog.id">
                                 Leia Mais <i class="bi bi-arrow-right"></i>
                             </a>
@@ -40,3 +40,12 @@
         </div>
     </div>
 </div>
+
+<script>
+    var subtitle = document.getElementById('blogSubtitle');
+    subtitle.style.display = '-webkit-box';
+    subtitle.style.webkitBoxOrient = 'vertical';
+    subtitle.style.overflow = 'hidden';
+    subtitle.style.textOverflow = 'ellipsis';
+    subtitle.style.webkitLineClamp = '2'; /* Número máximo de linhas que você quer mostrar */
+</script>

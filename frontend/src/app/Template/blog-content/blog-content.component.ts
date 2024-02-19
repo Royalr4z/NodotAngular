@@ -30,7 +30,7 @@ export class BlogContentComponent implements OnInit {
       .subscribe((response: any) => {
         const blogs = response;
 
-        if (!blogs.title || !blogs.imageurl || !blogs.content || !blogs.userName) {
+        if (!blogs.title || !blogs.imageUrl || !blogs.content || !blogs.userName) {
           this.router.navigate(['/blog']);
         }
         const titleBlog = document.getElementById('title-blog');
@@ -48,8 +48,8 @@ export class BlogContentComponent implements OnInit {
       .subscribe((response: any) => {
         
         this.posts = response.map((post: any) => {
-          if (!post.imageurl) {
-            post.imageurl = '../../../assets/img/blog-2.jpg';
+          if (!post.imageUrl) {
+            post.imageUrl = '../../../assets/img/blog-2.jpg';
           }
           return post;
         });

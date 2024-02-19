@@ -1,0 +1,8 @@
+#blogSubtitle {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Número máximo de linhas que você quer mostrar */
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+  }
+  
