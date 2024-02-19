@@ -15,15 +15,15 @@
 <form class="m-4">
     <div class="mb-3">
         <label class="col-form-label text-dark">Título:</label>
-        <input type="text" class="form-control border border-2 border-dark" id="typeTitle"/>
+        <input onkeydown="if(event.keyCode==13) document.getElementById('typeSubtitle').focus()" type="text" class="form-control border border-2 border-dark" id="typeTitle"/>
     </div>
     <div class="mb-3">
         <label class="col-form-label text-dark">Descrição:</label>
-        <input type="text" class="form-control border border-2 border-dark" id="typeSubtitle"/>
+        <input onkeydown="if(event.keyCode==13) document.getElementById('typeImageUrl').focus()" type="text" class="form-control border border-2 border-dark" id="typeSubtitle"/>
     </div>
     <div class="mb-3">
         <label class="col-form-label text-dark">Imagem (URL): <span [style.color]="'#8b8b8b'">(Opcional)</span></label>
-        <input type="text" class="form-control border border-2 border-dark" id="typeImageUrl"/>
+        <input onkeydown="if(event.keyCode==13) document.getElementById('typeContent').focus()" type="text" class="form-control border border-2 border-dark" id="typeImageUrl"/>
     </div>
     <div class="mb-3">
         <label class="col-form-label text-dark">Conteúdo: <span class="text-primary">(Coloque as tags no texto)</span></label>
@@ -31,7 +31,7 @@
     </div>
     <div class="col-12">
         <span class="text-dark">Usuário:</span>
-        <select id="typeUser" class="form-select mb-3 mt-2 border border-2 border-dark" [style.height]="'55px'">
+        <select onkeydown="if(event.keyCode==13) document.getElementById('typeCategory').focus()" id="typeUser" class="form-select mb-3 mt-2 border border-2 border-dark" [style.height]="'55px'">
             <option [value]="" selected>Selecione o Usuário</option>
             <option *ngFor="let user of users" [value]="user.id">{{ user.name }}</option>      
         </select>

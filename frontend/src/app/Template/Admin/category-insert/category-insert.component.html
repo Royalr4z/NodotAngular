@@ -29,7 +29,7 @@
 <form class="m-4">
     <div class="mb-3">
         <label class="col-form-label text-dark">Nome:</label>
-        <input type="text" class="form-control" id="typeName"/>
+        <input onkeydown="if(event.keyCode==13) document.getElementById('typeSubtitle').focus()" type="text" class="form-control" id="typeName"/>
     </div>
     <div class="mb-3">
         <label class="col-form-label text-dark">Descrição:
